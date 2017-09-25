@@ -1,6 +1,4 @@
 <?php
-
-
 require_once(__DIR__ . '/../config/config.php');
 require_once(__DIR__ . '/../lib/functions.php');
 //$ip = $_SERVER["REMOTE_ADDR"];
@@ -8,7 +6,6 @@ require_once(__DIR__ . '/../lib/functions.php');
 
 $app = new MyApp\Controller\Post();
 $app->run();
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,13 +22,14 @@ $app->run();
 		      <?= h($app->me()->email); ?> <input type="submit" value="ログアウト">
 		      <input type="hidden" name="token" value="<?= h($_SESSION['token']); ?>">
 		    </form>
-</div>
+  </div>
 	</div>
 	<div id="side">
 		<div class="menu_body"><a href="#">アドレス一覧</a></div>
 		<div class="menu_body"><a href="post_send.php">メール作成</a></div>
 	</div>
 		<div id="main_edit">
+			<?php $app->ok(); ?>
 	<h1>新規投稿</h1>
 	<form id="insert" method="post">
 	<div class="koumoku-box">
