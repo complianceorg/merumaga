@@ -1,3 +1,15 @@
+<?php
+
+
+require_once(__DIR__ . '/../config/config.php');
+require_once(__DIR__ . '/../lib/functions.php');
+//$ip = $_SERVER["REMOTE_ADDR"];
+//ip_check($ip);
+
+$app = new MyApp\Controller\Post();
+$app->run();
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,24 +21,28 @@
 <body>
 	<div id="high" class="clearfix">
 		<div class="welcome_msg">管理画面</div>
-		<div class="logout_btn"><a href="logout.php">ログアウト</a></div>
+		<div class="logout_btn">	    <form action="logout.php" method="post" id="logout">
+		      <?= h($app->me()->email); ?> <input type="submit" value="ログアウト">
+		      <input type="hidden" name="token" value="<?= h($_SESSION['token']); ?>">
+		    </form>
+</div>
 	</div>
 	<div id="side">
 		<div class="menu_body"><a href="#">アドレス一覧</a></div>
-		<div class="menu_body"><a href="#">メール作成</a></div>
+		<div class="menu_body"><a href="post_send.php">メール作成</a></div>
 	</div>
 		<div id="main_edit">
 	<h1>新規投稿</h1>
-	<form action="postnew_send.php" method="post" name="form1" onSubmit = "return check()" enctype="multipart/form-data">
+	<form id="insert" method="post">
 	<div class="koumoku-box">
 	<h2>タイトル[必須]</h2>
-	<input type="text" name="text" size="50" value="">
+	<input type="text" name="title" size="50" required>
 	</div>
 	<div class="koumoku-box">
 	<h2>本文[必須]</h2>
-	<textarea name="textarea" cols="100" rows="50" required=""></textarea>
+	<textarea name="contain" cols="100" rows="50" required=""></textarea>
 	</div>
-	<input type="submit" value="確定" class="hensyu_btn">
+	<div class="btn" onclick="document.getElementById('insert').submit();">確定</div>
 	</form>
 	</div>
 </div>
