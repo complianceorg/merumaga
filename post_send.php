@@ -28,7 +28,7 @@ $app->run();
 		<div class="menu_body"><a href="#">アドレス一覧</a></div>
 		<div class="menu_body"><a href="post_send.php">メール作成</a></div>
 	</div>
-		<div id="main_edit">
+	<div id="main_edit">
 			<?php $app->ok(); ?>
 	<h1>新規投稿</h1>
 	<form id="insert" method="post">
