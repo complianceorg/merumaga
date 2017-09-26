@@ -26,5 +26,5 @@ require_once(__DIR__ . '/../../lib/functions.php');
 		<div class="menu_body"><a href="<?= SITE_URL; ?>">メール一覧</a></div>
 		<div class="menu_body"><a href= "post_send.php" >メール作成</a></div>
 		<div class="menu_body"><a href="edit.php">メール編集</a></div>
-		<div class="menu_body"><a href="#">アドレス一覧</a></div>
+		<div class="menu_body"><a href="address.php">アドレス一覧</a></div>
 	</div>
