@@ -5,7 +5,7 @@
 ?>
 	<div id="main_edit">
 			<?php $app->ok(); ?>
-	<h1>新規投稿</h1>
+	<h1>メール作成</h1>
 	<form id="insert" method="post">
 	<div class="koumoku-box">
 	<h2>タイトル[必須]</h2>

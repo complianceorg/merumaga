@@ -3,6 +3,7 @@
 	$app = new MyApp\Controller\Index();
 	$app->run();
 	?>
+  <div id="main_edit">
 	<h1>メール一覧</h1>
 	<div class="kizi-box">
 		<?php foreach ($app->getValues()->posts as $post) : ?>
@@ -18,5 +19,6 @@
 		</form>
 	  <?php endforeach; ?>
 	</div>
+</div>
 </body>
 </html>

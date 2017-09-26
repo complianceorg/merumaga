@@ -5,7 +5,7 @@
 ?>
 	<div id="main_edit">
 			<?php $app->ok(); ?>
-	<h1>投稿編集</h1>
+	<h1>メール編集</h1>
   <?php foreach ($app->getValues()->getposts as $post) : ?>
 	<form id="edit" method="post">
 	<div class="koumoku-box">
