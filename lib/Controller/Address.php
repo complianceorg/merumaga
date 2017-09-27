@@ -15,6 +15,8 @@ class Address extends \MyApp\Controller {
     $addressModel = new \MyApp\Model\Address();
     $this->setValues('addresses', $addressModel->findAll());
 
+    $address_postModel = new \MyApp\Model\Address_post();
+    $this->setValues('addresses_post', $address_postModel->findAll());
 
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {

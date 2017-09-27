@@ -22,6 +22,11 @@ class Post extends \MyApp\Model {
     ]);
   }
 
+  public function delete($values){
+    $stmt = $this->db->prepare("DELETE FROM `post_table` WHERE id=:id");
+    $stmt->execute([':id' => $values['id']]);
+  }
+
 
   public function findAll() {
   $stmt = $this->db->query("select * from post_table");
