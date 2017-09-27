@@ -16,6 +16,7 @@
         <th>件名</th>
         <th>本文</th>
         <th>詳細</th>
+        <th>削除</th>
         <th><a href="address.php"></a>登録者全員へ</th>
         <th>掲示板からの人へ</th>
         <th>その他の人へ</th>
@@ -26,7 +27,14 @@
       <tr>
         <td><?= h(mb_strimwidth($post->title, 0, 10 ,"...","utf8")); ?></td>
         <td><?= h(mb_strimwidth($post->contain, 0, 20 ,"...","utf8")); ?></td>
-  		  <td><a href="<?= SITE_URL.'edit.php?id='. h($post->id); ?>" class="list">詳細</a></td>
+        <td><a href="<?= SITE_URL.'edit.php?id='. h($post->id); ?>" class="list">詳細</a></td>
+        <td>
+          <form id="delete" action="" method="post">
+            <input type="button" value="削除" onclick="document.getElementById('delete').submit()">
+            <input type="hidden" value="<?= h($post->id); ?>" name="deleteid">
+      			<input type="hidden" name="token" value="<?= h($_SESSION['token']); ?>">
+          </form>
+  		  </td>
         <td>
           <form id="send_1<?= h($post->id); ?>" action="" method="post">
             <input type="button" value="メルマガ送信" onclick="confirm_1<?= h($post->id); ?>()">
