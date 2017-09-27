@@ -24,8 +24,8 @@
       <tbody>
 		<?php foreach ($app->getValues()->posts as $post) : ?>
       <tr>
-        <td><?= h($post->title);?></td>
-        <td><?= h($post->contain); ?></td>
+        <td><?= h(mb_strimwidth($post->title, 0, 10 ,"...","utf8")); ?></td>
+        <td><?= h(mb_strimwidth($post->contain, 0, 20 ,"...","utf8")); ?></td>
   		  <td><a href="<?= SITE_URL.'edit.php?id='. h($post->id); ?>" class="list">詳細</a></td>
         <td>
           <form id="send_1<?= h($post->id); ?>" action="" method="post">
