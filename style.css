@@ -14,7 +14,7 @@ small, strong, sub, sup, var,
 b, i,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
+/*table, caption, tbody, tfoot, thead, tr, th, td,*/
 article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video {
@@ -25,6 +25,11 @@ time, mark, audio, video {
   font-size: 100%;
   vertical-align: baseline;
   background: transparent;
+}
+
+table, caption, tbody, tfoot, thead, tr, th, td{
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -84,10 +89,10 @@ abbr[title], dfn[title] {
   cursor: help;
 }
 
-table {
+/*table {
   border-collapse: collapse;
-  border-spacing: 0;
-}
+  border-spacing: 10;
+}*/
 
 /* change border colour to suit your needs */
 hr {
