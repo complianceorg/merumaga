@@ -19,10 +19,10 @@ $app->run();
 <body>
   <div id="container">
     <form action="" method="post" id="login">
-      <p>
+      <p class="logid">
         <input type="text" name="ID" placeholder="ID" value="<?= isset($app->getValues()->ID) ? h($app->getValues()->ID) : ''; ?>">
       </p>
-      <p>
+      <p class="logpass">
         <input type="password" name="password" placeholder="password">
       </p>
       <p class="err"><?= h($app->getErrors('login')); ?></p>
